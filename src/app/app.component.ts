@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { EventBrokerService } from './event-broker.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-communication-ways';
+
+    constructor(private eventBroker: EventBrokerService){
+        (<any>window).eventBroker = this.eventBroker;
+    }
 }
